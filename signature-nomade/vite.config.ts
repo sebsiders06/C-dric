@@ -23,30 +23,10 @@ function githubPagesFallback404(): Plugin {
   };
 }
 
+/** Site projet GitHub Pages : https://sebsiders06.github.io/C-dric/ — base fixe uniquement au build (`vite build` / predeploy). */
+const PAGES_BASE = "/C-dric/" as const;
 
-/**
- * GitHub Pages (site projet) : la base doit être `/nom-du-depot/` pour que les assets
- * pointent vers `https://user.github.io/nom-du-depot/assets/...`.
- * Avec `base: './'`, l’URL sans slash final (`…/repo`) résout mal les chemins relatifs → 404 sur le JS.
- *
- * La CI définit `DEPLOY_BASE` (voir workflow). En local, `npm run dev` reste en `/`.
- * Build local sans env : base relative `./` pour `vite preview` à la racine.
- */
-function viteBase(mode: string, explicit?: string): string {
-  const raw = explicit?.trim();
-  if (raw) {
-    if (raw === "/" || raw === "//") return "/";
-    const withSlash = raw.startsWith("/") ? raw : `/${raw}`;
-    return withSlash.endsWith("/") ? withSlash : `${withSlash}/`;
-  }
-
-  const isProd =
-    mode === "production" || process.env.CI === "true" || process.env.GITHUB_ACTIONS === "true";
-  return isProd ? "./" : "/";
-}
-
-export default defineConfig(({ mode }) => ({
+export default defineConfig(({ command }) => ({
   plugins: [react(), tailwindcss(), githubPagesFallback404()],
-  base: viteBase(mode, process.env.DEPLOY_BASE ?? process.env.BASE_PATH),
+  base: command === "build" ? PAGES_BASE : "/",
 }));
-
