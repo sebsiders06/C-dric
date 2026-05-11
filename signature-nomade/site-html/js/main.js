@@ -29,9 +29,9 @@
     toggle?.setAttribute("aria-label", open ? labelClose : labelOpen);
   });
 
-  panel?.querySelectorAll("a[href]").forEach((link) =>
+  (panel?.querySelectorAll?.("a[href]") ?? []).forEach((link) =>
     link.addEventListener("click", () => {
-      panel.classList.remove("is-open");
+      panel?.classList.remove("is-open");
       toggle?.setAttribute("aria-expanded", "false");
       toggle?.setAttribute("aria-label", labelOpen);
     }),
