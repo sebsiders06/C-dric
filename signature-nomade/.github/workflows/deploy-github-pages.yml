@@ -44,17 +44,35 @@ jobs:
             npm install --no-audit --no-fund
           fi
 
+      # Base absolue obligatoire sur Pages : sinon ./assets se résout mal sans slash final sur l’URL.
+      - name: Base Vite pour GitHub Pages
+        id: pages
+        run: |
+          REPO="${{ github.event.repository.name }}"
+          if [[ "$REPO" == *.github.io ]]; then
+            echo "vite_base=/" >> "$GITHUB_OUTPUT"
+            echo "Site utilisateur : base /"
+          else
+            echo "vite_base=/$REPO/" >> "$GITHUB_OUTPUT"
+            echo "Site projet : base /$REPO/"
+          fi
+
       - name: Build
         run: npm run build
         env:
           CI: true
           NODE_ENV: production
+          GITHUB_ACTIONS: true
+          DEPLOY_BASE: ${{ steps.pages.outputs.vite_base }}
 
       - name: Vérifier la sortie
         run: |
           test -f dist/index.html
           test -f dist/404.html
-          ls -la dist/
+          echo "--- dist/index.html (aperçu) ---"
+          head -40 dist/index.html
+          echo "--- assets ---"
+          ls -la dist/assets/ || true
 
       - name: Configure Pages
         uses: actions/configure-pages@v5

@@ -25,14 +25,17 @@ function githubPagesFallback404(): Plugin {
 
 
 /**
- * Déploiement GitHub Pages : en build, une base relative évite les 404 sur
- * https://pseudo.github.io/nom-du-depot/. En dev (`vite`), on garde '/' pour une URL propre en local.
+ * GitHub Pages (site projet) : la base doit être `/nom-du-depot/` pour que les assets
+ * pointent vers `https://user.github.io/nom-du-depot/assets/...`.
+ * Avec `base: './'`, l’URL sans slash final (`…/repo`) résout mal les chemins relatifs → 404 sur le JS.
  *
- * Définir DEPLOY_BASE (ex. /mon-repo/) depuis la CI uniquement pour forcer une base fixe si besoin.
+ * La CI définit `DEPLOY_BASE` (voir workflow). En local, `npm run dev` reste en `/`.
+ * Build local sans env : base relative `./` pour `vite preview` à la racine.
  */
 function viteBase(mode: string, explicit?: string): string {
   const raw = explicit?.trim();
   if (raw) {
+    if (raw === "/" || raw === "//") return "/";
     const withSlash = raw.startsWith("/") ? raw : `/${raw}`;
     return withSlash.endsWith("/") ? withSlash : `${withSlash}/`;
   }
