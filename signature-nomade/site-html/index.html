@@ -1,0 +1,612 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Signature Nomade — Traiteur mobile premium. Restauration événementielle sur mesure partout en France."
+    />
+    <title>Signature Nomade — Traiteur mobile &amp; événementiel premium</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body class="sn-body">
+    <div class="sn-loader" id="sn-loader" aria-hidden="true">
+      <div class="sn-loader-inner">
+        <span class="sn-loader-brand">SIGNATURE NOMADE</span>
+        <div class="sn-loader-bar" aria-hidden="true"></div>
+      </div>
+    </div>
+
+    <a class="sn-skip sn-display" href="#hero">Aller au contenu</a>
+
+    <header class="sn-nav" id="sn-nav">
+      <div class="sn-nav-inner">
+        <a href="#hero" class="sn-brand">
+          <span class="sn-brand-dot" aria-hidden="true"></span>
+            <span class="sn-brand-text sn-display">Signature Nomade</span>
+        </a>
+        <nav class="sn-nav-links" aria-label="Navigation principale">
+          <a href="#a-propos">À propos</a>
+          <a href="#prestations">Prestations</a>
+          <a href="#savoir-faire">Savoir-faire</a>
+          <a href="#tarifs">Tarifs</a>
+          <a href="#galerie">Galerie</a>
+          <a href="#avis">Avis</a>
+          <a href="#processus">Processus</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <div class="sn-nav-actions">
+          <a class="btn sn-btn-outline sn-btn" href="#tarifs">Nos formules</a>
+          <a class="btn sn-btn sn-btn-solid" href="#contact">Devis gratuit</a>
+        </div>
+        <button
+          type="button"
+          class="sn-nav-toggle"
+          id="sn-nav-toggle"
+          aria-expanded="false"
+          aria-controls="sn-nav-panel"
+          data-label-open="Ouvrir le menu"
+          data-label-close="Fermer le menu"
+          aria-label="Ouvrir le menu"
+        >
+          ☰
+        </button>
+      </div>
+      <div id="sn-nav-panel" class="sn-mobile-panel">
+        <div class="sn-mobile-grid">
+          <a href="#a-propos">À propos</a>
+          <a href="#prestations">Prestations</a>
+          <a href="#savoir-faire">Savoir-faire</a>
+          <a href="#tarifs">Tarifs</a>
+          <a href="#galerie">Galerie</a>
+          <a href="#avis">Avis</a>
+          <a href="#processus">Processus</a>
+          <a href="#contact">Contact</a>
+          <div style="grid-column: 1 / -1; display:flex; flex-direction:column; gap:.5rem; margin-top:.5rem">
+            <a class="sn-btn sn-btn-solid sn-btn-lg" href="#contact">Demander un devis</a>
+            <a class="sn-btn sn-btn-outline sn-btn-lg" href="#prestations">Voir nos prestations</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero -->
+      <section id="hero" class="sn-hero sn-section-anchor">
+        <div class="sn-hero-media">
+          <img
+            src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&amp;fit=crop&amp;w=2400&amp;q=85"
+            alt=""
+            decoding="async"
+          />
+          <div class="sn-hero-overlay"></div>
+          <div class="sn-hero-overlay sn-grain"></div>
+        </div>
+        <div class="sn-hero-inner">
+          <p class="sn-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+              <path d="M12 21s-8-4.434-8-11a8 8 0 0116 0c0 6.566-8 11-8 11z" stroke-width="1.5"></path>
+              <circle cx="12" cy="11" r="2.5" stroke-width="1.5"></circle>
+            </svg>
+            Déplacement partout en France
+          </p>
+          <h1 class="sn-display">L'expérience gastronomique qui vient à vous</h1>
+          <p class="lead">
+            Prestations culinaires haut de gamme pour entreprises, événements privés et réceptions sur mesure.
+          </p>
+          <div class="sn-hero-cta">
+            <a class="sn-btn sn-btn-solid sn-btn-lg" href="#contact">Demander un devis</a>
+            <a class="sn-btn sn-btn-outline-lg sn-btn-lg" href="#prestations">Voir nos prestations</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- À propos -->
+      <section id="a-propos" class="sn-section sn-bg-soft sn-section-anchor sn-reveal">
+        <div class="sn-about-split sn-container">
+          <div class="sn-card-img">
+            <img
+              src="https://images.unsplash.com/photo-1555244162-80383440d5fc?auto=format&amp;fit=crop&amp;w=1600&amp;q=85"
+              alt="Service événementiel"
+              loading="lazy"
+              decoding="async"
+            />
+            <p class="sn-card-caption sn-display mb-0">Menus pensés comme en salle avec la même rigueur sur site.</p>
+          </div>
+          <div>
+            <p class="sn-section-kicker">Signature Nomade</p>
+            <h2 class="sn-display">À propos</h2>
+            <p class="sn-body-text mt-16" style="margin-top: 1rem">
+              Signature Nomade transforme chaque réception en expérience culinaire mémorable. Nous proposons des prestations de
+              restauration sur mesure directement sur le lieu de votre événement, pour les professionnels comme les particuliers.
+            </p>
+            <div class="sn-stats">
+              <article class="sn-stat"><strong>+150</strong><span>événements</span></article>
+              <article class="sn-stat"><strong>100%</strong><span>sur mesure</span></article>
+              <article class="sn-stat"><strong>7j/7</strong><span>disponible</span></article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Prestations -->
+      <section id="prestations" class="sn-section sn-section-anchor sn-reveal">
+        <div class="sn-container text-center">
+          <p class="sn-section-kicker">Prestations</p>
+          <h2 class="sn-display">Expériences pour chaque moment</h2>
+          <p class="sn-sub">Un traiteur mobile premium : nous installons matériel, service et mise en valeur sur votre lieu.</p>
+        </div>
+        <div class="sn-container sn-grid-services" style="margin-top: 2.5rem">
+          <article class="sn-service-card">
+            <div class="sn-service-cover">
+              <img src="https://images.unsplash.com/photo-1529042410759-befb1204b468?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="" loading="lazy" />
+              <span class="sn-gradient"></span>
+              <span class="sn-service-chip">Cocktails</span>
+            </div>
+            <div class="sn-service-body">
+              <h3 class="sn-display">Cocktails dînatoires</h3>
+              <p>Bouchées fines, flux de service impeccable pour vos soirées professionnelles.</p>
+              <a class="sn-link-gold" href="#contact">Programmer →</a>
+            </div>
+          </article>
+          <article class="sn-service-card">
+            <div class="sn-service-cover">
+              <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="" loading="lazy" />
+              <span class="sn-gradient"></span>
+              <span class="sn-service-chip">Buffet</span>
+            </div>
+            <div class="sn-service-body">
+              <h3 class="sn-display">Buffet premium</h3>
+              <p>Tablées scénographiées, saisonnalité affirmée.</p>
+              <a class="sn-link-gold" href="#contact">Programmer →</a>
+            </div>
+          </article>
+          <article class="sn-service-card">
+            <div class="sn-service-cover">
+              <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="" loading="lazy" />
+              <span class="sn-gradient"></span>
+              <span class="sn-service-chip">Chef</span>
+            </div>
+            <div class="sn-service-body">
+              <h3 class="sn-display">Chef à domicile</h3>
+              <p>Menu dégustation, mise en bouche sous vos yeux, narration précise à chaque plat.</p>
+              <a class="sn-link-gold" href="#contact">Programmer →</a>
+            </div>
+          </article>
+          <article class="sn-service-card">
+            <div class="sn-service-cover">
+              <img src="https://images.unsplash.com/photo-1527169402691-feff553c519b?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="" loading="lazy" />
+              <span class="sn-gradient"></span>
+              <span class="sn-service-chip">Brunch</span>
+            </div>
+            <div class="sn-service-body">
+              <h3 class="sn-display">Brunch événementiel</h3>
+              <p>Matins généreux, ambiance lounge jusqu'au café gourmand.</p>
+              <a class="sn-link-gold" href="#contact">Programmer →</a>
+            </div>
+          </article>
+          <article class="sn-service-card">
+            <div class="sn-service-cover">
+              <img src="https://images.unsplash.com/photo-1540575467063-27a917340a73?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="" loading="lazy" />
+              <span class="sn-gradient"></span>
+              <span class="sn-service-chip">Entreprises</span>
+            </div>
+            <div class="sn-service-body">
+              <h3 class="sn-display">Séminaires d'entreprise</h3>
+              <p>Déjeuners presse, clôtures de séminaires, pauses gastronomiques carburants.</p>
+              <a class="sn-link-gold" href="#contact">Programmer →</a>
+            </div>
+          </article>
+          <article class="sn-service-card">
+            <div class="sn-service-cover">
+              <img src="https://images.unsplash.com/photo-1464366400609-0988cd296e9e?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="" loading="lazy" />
+              <span class="sn-gradient"></span>
+              <span class="sn-service-chip">Privé</span>
+            </div>
+            <div class="sn-service-body">
+              <h3 class="sn-display">Mariages &amp; événements privés</h3>
+              <p>Fil conducteur jusqu'aux desserts, mise en valeur des lieux choisis.</p>
+              <a class="sn-link-gold" href="#contact">Programmer →</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Savoir-faire -->
+      <section id="savoir-faire" class="sn-section sn-bg-soft-b sn-section-anchor sn-reveal">
+        <div class="sn-container sn-know-grid">
+          <div class="sn-know-side">
+            <p class="sn-section-kicker">Excellence</p>
+            <h2 class="sn-display">Notre savoir-faire</h2>
+            <p class="sn-body-text">Une promesse artisanale pour des événements d'exception</p>
+            <div style="margin-top: 2rem">
+              <div class="sn-card-img">
+                <img
+                  src="https://images.unsplash.com/photo-1540189549338-e700f0ccf501?auto=format&amp;fit=crop&amp;w=1600&amp;q=85"
+                  alt="Cuisine"
+                  loading="lazy"
+                  style="aspect-ratio: 5/4"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="sn-pill-grid">
+            <div class="sn-pill">
+              <div class="sn-pill-icon" aria-hidden="true">🌿</div>
+              <h3 class="sn-display">Produits frais</h3>
+              <p class="sn-muted">Saisons suivies, traçabilité et circuits courts lorsque possible.</p>
+            </div>
+            <div class="sn-pill">
+              <div class="sn-pill-icon">👩‍🍳</div>
+              <h3 class="sn-display">Cuisine maison</h3>
+              <p class="sn-muted">Préparation en cuisines atelier puis finitions spectaculaires au lieu.</p>
+            </div>
+            <div class="sn-pill">
+              <div class="sn-pill-icon">✦</div>
+              <h3 class="sn-display">Service professionnel</h3>
+              <p class="sn-muted">Discrétion olympique et synchronisme millimétrique avec vos temps forts.</p>
+            </div>
+            <div class="sn-pill">
+              <div class="sn-pill-icon">◇</div>
+              <h3 class="sn-display">Installation complète</h3>
+              <p class="sn-muted">Lumière tamisée, dressage sur mesure, matériels premium inclus.</p>
+            </div>
+            <div class="sn-pill" style="grid-column: 1/-1">
+              <div class="sn-pill-icon">⚑</div>
+              <h3 class="sn-display">Adaptation alimentaire</h3>
+              <p class="sn-muted mb-0">Allergènes, halal, végan, sans gluten ou menus juniors parfaitement calés avec le cadre général.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tarifs -->
+      <section id="tarifs" class="sn-section sn-section-anchor sn-reveal">
+        <div class="sn-container text-center">
+          <p class="sn-section-kicker">Tarifs</p>
+          <h2 class="sn-display">Trois signatures tarifaires</h2>
+          <p class="sn-sub">Les devis s'affinissent selon convives, distance et niveau de service.</p>
+        </div>
+        <div class="sn-container sn-pricing">
+          <article class="sn-price-card">
+            <header>
+              <h3 class="sn-display">Formule Essentielle</h3>
+              <p class="sn-muted mt-16" style="margin-top: .5rem">Entrées élégantes pour réceptions sérieuses sans démesure.</p>
+            </header>
+            <p class="sn-display mt-16" style="margin-top: 1.75rem; color: var(--gold); font-size: 1.5rem">À partir de 25€/personne</p>
+            <ul class="sn-ul">
+              <li><span class="sn-ul-dot"></span><span>Buffet simple</span></li>
+              <li><span class="sn-ul-dot"></span><span>Livraison</span></li>
+              <li><span class="sn-ul-dot"></span><span>Mise en place</span></li>
+            </ul>
+            <a class="sn-btn sn-btn-outline mt-16 sn-btn-lg" style="margin-top: auto; width:100%; box-sizing:border-box" href="#contact">Réserver</a>
+          </article>
+          <article class="sn-price-card sn-price-highlight">
+            <span class="sn-reco">Recommandé</span>
+            <header>
+              <h3 class="sn-display">Formule Signature</h3>
+              <p class="sn-muted mt-16" style="margin-top: .5rem">L'ADN gastronomique de Signature Nomade, version complète.</p>
+            </header>
+            <p class="sn-display mt-16" style="margin-top: 1.75rem; color: var(--gold); font-size: 1.5rem">À partir de 49€/personne</p>
+            <ul class="sn-ul">
+              <li><span class="sn-ul-dot"></span><span>Menu premium</span></li>
+              <li><span class="sn-ul-dot"></span><span>Service inclus</span></li>
+              <li><span class="sn-ul-dot"></span><span>Animation culinaire</span></li>
+            </ul>
+            <a class="sn-btn sn-btn-solid mt-16 sn-btn-lg" style="margin-top: auto; width:100%; box-sizing:border-box" href="#contact">Réserver</a>
+          </article>
+          <article class="sn-price-card">
+            <header>
+              <h3 class="sn-display">Formule Prestige</h3>
+              <p class="sn-muted mt-16" style="margin-top: .5rem">Carte blanche, chef privatif, démesure élégante.</p>
+            </header>
+            <p class="sn-display mt-16" style="margin-top: 1.75rem; color: var(--gold); font-size: 1.5rem">Sur devis</p>
+            <ul class="sn-ul">
+              <li><span class="sn-ul-dot"></span><span>Expérience sur mesure</span></li>
+              <li><span class="sn-ul-dot"></span><span>Chef privé</span></li>
+              <li><span class="sn-ul-dot"></span><span>Événement haut de gamme</span></li>
+            </ul>
+            <a class="sn-btn sn-btn-outline mt-16 sn-btn-lg" style="margin-top: auto; width:100%; box-sizing:border-box" href="#contact">Réserver</a>
+          </article>
+        </div>
+      </section>
+
+      <!-- Galerie -->
+      <section id="galerie" class="sn-section sn-bg-soft sn-section-anchor sn-reveal">
+        <div class="sn-container text-center">
+          <p class="sn-section-kicker">Galerie</p>
+          <h2 class="sn-display">Dressages &amp; atmosphères</h2>
+          <p class="sn-sub">Quelques instants où la mise en scène défend le plat autant que le goût.</p>
+        </div>
+        <div class="sn-container sn-masonry">
+          <figure>
+            <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Dressage gastronomique" loading="lazy" /><span class="sn-gal-cover"></span><span class="sn-tag">Dressage</span>
+            <figcaption>Dressage gastronomique</figcaption>
+          </figure>
+          <figure>
+            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Événement" loading="lazy" /><span class="sn-gal-cover">></span><span class="sn-tag">Événement</span>
+            <figcaption>Service en salle événementiel</figcaption>
+          </figure>
+          <figure>
+            <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="" loading="lazy" /><span class="sn-gal-cover">></span><span class="sn-tag">Ambiance</span>
+            <figcaption>Bol gastronomique</figcaption>
+          </figure>
+          <figure>
+            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="" loading="lazy" /><span class="sn-gal-cover">></span><span class="sn-tag">Dressage</span>
+            <figcaption>Table mariage chic</figcaption>
+          </figure>
+          <figure>
+            <img src="https://images.unsplash.com/photo-1504753793650-d4a2b783c15e?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="" loading="lazy" /><span class="sn-gal-cover">></span><span class="sn-tag">Événement</span>
+            <figcaption>Réunion &amp; cafés précis</figcaption>
+          </figure>
+          <figure>
+            <img src="https://images.unsplash.com/photo-1559329007-e0d6ccee6d7b?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="" loading="lazy" /><span class="sn-gal-cover">></span><span class="sn-tag">Ambiance</span>
+            <figcaption>Buffets scéniques</figcaption>
+          </figure>
+          <figure>
+            <img src="https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="" loading="lazy" /><span class="sn-gal-cover">></span><span class="sn-tag">Dressage</span>
+            <figcaption>Réceptions lumineuses</figcaption>
+          </figure>
+          <figure>
+            <img src="https://images.unsplash.com/photo-1550985616-873b6d7c4c7c?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="" loading="lazy" /><span class="sn-gal-cover">></span><span class="sn-tag">Événement</span>
+            <figcaption>Desserts architecturaux</figcaption>
+          </figure>
+          <figure>
+            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="" loading="lazy" /><span class="sn-gal-cover">></span><span class="sn-tag">Ambiance</span>
+            <figcaption>Ambiances restaurateurs</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- Avis -->
+      <section id="avis" class="sn-section sn-section-anchor sn-reveal">
+        <div class="sn-container sn-testimonials-head sn-reveal">
+          <div>
+            <p class="sn-section-kicker">Références</p>
+            <h2 class="sn-display">Moments gravés dans les mémoires</h2>
+            <p class="sn-body-text sn-sub-left mb-0" style="max-width: 28rem">
+              Entreprises, familles, agences événementielles&nbsp;: une ligne directrice — le calme d'un gastronomique.
+            </p>
+          </div>
+          <div class="sn-carousel-controls">
+            <button type="button" class="sn-carousel-btn" id="sn-carousel-prev" aria-label="Avis précédent">⟨</button>
+            <button type="button" class="sn-carousel-btn sn-carousel-btn-accent" id="sn-carousel-next" aria-label="Avis suivant">⟩</button>
+          </div>
+        </div>
+        <div class="sn-carousel-view sn-container" id="sn-carousel-view">
+          <div class="sn-carousel-track" id="sn-carousel-track" data-slides="5">
+            <div class="sn-slide">
+              <article class="sn-quote-inner">
+                <blockquote>
+                  «&nbsp;Soirée SaaS impeccable : timings millimétrés et dressage précis sous les projecteurs VC.&nbsp;»
+                </blockquote>
+                <footer style="margin-top: 2rem; display:flex;justify-content:space-between;gap:1rem;align-items:center;border-top:1px solid rgba(255,255,255,.1);padding-top:1rem">
+                  <div>
+                    <strong>Sophie Marin</strong>
+                    <p class="sn-muted mb-0" style="text-transform:uppercase;letter-spacing:.15em;margin-top:.4rem;font-size:.7rem">
+                      Entreprise
+                    </p>
+                    <p class="sn-muted mb-0" style="margin-top:.2rem;font-size:.9rem">Paris</p>
+                  </div>
+                  <span class="sn-stars" aria-label="5 sur 5">★★★★★</span>
+                </footer>
+              </article>
+            </div>
+            <div class="sn-slide">
+              <article class="sn-quote-inner">
+                <blockquote>«&nbsp;Mariage Loire&nbsp;: tableau végétarien sublime, enfants dorlotés jusqu'aux douceurs.&nbsp;»</blockquote>
+                <footer style="margin-top: 2rem; display:flex;justify-content:space-between;gap:1rem;align-items:center;border-top:1px solid rgba(255,255,255,.1);padding-top:1rem">
+                  <div>
+                    <strong>Claire&nbsp;&amp; Julien Dumas</strong>
+                    <p class="sn-muted mb-0" style="text-transform:uppercase;letter-spacing:.15em;margin-top:.4rem;font-size:.7rem">Mariage</p>
+                    <p class="sn-muted mb-0">Château</p>
+                  </div>
+                  <span class="sn-stars" aria-label="5 sur 5">★★★★★</span>
+                </footer>
+              </article>
+            </div>
+            <div class="sn-slide">
+              <article class="sn-quote-inner">
+                <blockquote>«&nbsp;60 ans orchestrés comme un gala — ris de veau encore commenté plusieurs jours.&nbsp;»</blockquote>
+                <footer style="margin-top: 2rem; display:flex;justify-content:space-between;gap:1rem;align-items:center;border-top:1px solid rgba(255,255,255,.1);padding-top:1rem">
+                  <div>
+                    <strong>Élodie Petit</strong>
+                    <p class="sn-muted mb-0" style="text-transform:uppercase;letter-spacing:.15em;margin-top:.4rem;font-size:.7rem">Anniversaire</p>
+                    <p class="sn-muted mb-0">Lyon</p>
+                  </div>
+                  <span class="sn-stars">★★★★★</span>
+                </footer>
+              </article>
+            </div>
+            <div class="sn-slide">
+              <article class="sn-quote-inner">
+                <blockquote>«&nbsp;Chef à Bordeaux pour 16&nbsp;: précision de grand restaurant livrée salon.&nbsp;»</blockquote>
+                <footer style="margin-top: 2rem; display:flex;justify-content:space-between;gap:1rem;align-items:center;border-top:1px solid rgba(255,255,255,.1);padding-top:1rem">
+                  <div>
+                    <strong>Alexandre Vogt</strong>
+                    <p class="sn-muted mb-0" style="text-transform:uppercase;letter-spacing:.15em;margin-top:.4rem;font-size:.7rem">Événement privé</p>
+                    <p class="sn-muted mb-0">Maison contemporaine</p>
+                  </div>
+                  <span class="sn-stars">★★★★★</span>
+                </footer>
+              </article>
+            </div>
+            <div class="sn-slide">
+              <article class="sn-quote-inner">
+                <blockquote>«&nbsp;Agences fashion exigeantes : logistique claire et assiettes photogéniques à chaque service.&nbsp;»</blockquote>
+                <footer style="margin-top: 2rem; display:flex;justify-content:space-between;gap:1rem;align-items:center;border-top:1px solid rgba(255,255,255,.1);padding-top:1rem">
+                  <div>
+                    <strong>Inès Haroun</strong>
+                    <p class="sn-muted mb-0" style="text-transform:uppercase;letter-spacing:.15em;margin-top:.4rem;font-size:.7rem">Agence premium</p>
+                  </div>
+                  <span class="sn-stars">★★★★★</span>
+                </footer>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Processus -->
+      <section id="processus" class="sn-bg-soft sn-section sn-section-anchor sn-reveal">
+        <div class="sn-container">
+          <div class="text-center">
+            <p class="sn-section-kicker">Process</p>
+            <h2 class="sn-display">Quatre jalons, zéro stress</h2>
+            <p class="sn-sub">De la première prise de contact aux derniers textiles pliés&nbsp;: équipe synchrone.</p>
+          </div>
+          <div class="sn-timeline">
+            <div class="sn-timeline-line"></div>
+            <ol style="margin: 0;padding: 0;list-style: none;">
+              <li class="sn-process-item">
+                <span class="sn-num">01</span>
+                <div class="sn-process-item-inner"><h3>Prise de contact</h3><p>Vos envies se traduisent en brief précis lors d'un rendez-vous dédié.</p></div>
+              </li>
+              <li class="sn-process-item">
+                <span class="sn-num">02</span>
+                <div><h3>Création du menu</h3><p>Propositions évolutives avec dégustation possible lorsque vos enjeux l'exigent.</p></div>
+              </li>
+              <li class="sn-process-item">
+                <span class="sn-num">03</span>
+                <div><h3>Organisation</h3><p>Planning de montage communiqué&nbsp;; coordination fluide avec vos prestataires existants.</p></div>
+              </li>
+              <li class="sn-process-item">
+                <span class="sn-num">04</span>
+                <div><h3>Jour&nbsp;J</h3><p>Arrivées calibrées, service silencieux, rangement impeccable&nbsp;: nous disparaissons sans laisser de trace hors compliments.</p></div>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="sn-section sn-section-anchor sn-reveal">
+        <div class="sn-container text-center">
+          <p class="sn-section-kicker">Contact</p>
+          <h2 class="sn-display">Concrétisons vos envies</h2>
+          <p class="sn-sub">Réponse circonstanciée sous 24&nbsp;h ouvrées.</p>
+        </div>
+        <div class="sn-container sn-contact-split">
+          <form class="sn-form" id="sn-contact-form">
+            <div class="sn-fields">
+              <label class="sn-span-2"
+                ><span>Nom complet</span><input name="name" type="text" required autocomplete="name" placeholder="Votre nom"
+              /></label>
+              <label><span>E-mail</span><input type="email" name="email" required autocomplete="email" placeholder="vous@entreprise.fr" /></label>
+              <label><span>Téléphone</span><input type="tel" name="phone" required autocomplete="tel" placeholder="+33&nbsp;6 …" /></label>
+              <label><span>Type d'événement</span><input name="eventType" placeholder="Mariage, séminaire…" /></label>
+              <label><span>Date envisagée</span><input name="date" type="date" /></label>
+              <label class="sn-span-2"
+                ><span>Message</span><textarea name="message" rows="4" placeholder="Convives estimés, contraintes, ambiance…"></textarea>
+              </label>
+            </div>
+            <p id="sn-form-notice" class="sn-notice">
+              Ouverture de votre messagerie pour expédier le message compilé&nbsp;; nous continuons ensuite en direct.
+            </p>
+            <button type="submit" class="sn-btn sn-btn-solid sn-btn-lg" style="margin-top:1.75rem;width:100%">Demander mon devis gratuit</button>
+            <p class="sn-form-foot">En validant vous acceptez d'être recontacté&nbsp;; aucune donnée n'est stockée automatiquement côté site.</p>
+          </form>
+          <aside>
+            <div class="sn-info-card sn-reveal">
+              <p class="sn-section-kicker" style="letter-spacing:.3em;margin-bottom:.4rem;">Coordonnées</p>
+              <ul class="sn-rows">
+                <li>
+                  <span class="ico" aria-hidden="true">☎</span>
+                  <div>
+                    <span class="label">Téléphone</span>
+                    <a href="tel:+33612345678">+33&nbsp;6&nbsp;12&nbsp;34&nbsp;56&nbsp;78</a>
+                  </div>
+                </li>
+                <li>
+                  <span class="ico">✉</span>
+                  <div>
+                    <span class="label">E-mail</span>
+                    <a href="mailto:contact@signature-nomade.fr">contact@signature-nomade.fr</a>
+                  </div>
+                </li>
+                <li>
+                  <span class="ico">⚲</span>
+                  <div>
+                    <span class="label">Intervention</span>
+                    France entière&nbsp;; logistique sur devis suivant vos lieux.
+                  </div>
+                </li>
+              </ul>
+              <nav class="sn-social-row" aria-label="Réseaux sociaux">
+                <a href="https://instagram.com" aria-label="Instagram" rel="noopener">◎</a>
+                <a href="https://facebook.com" aria-label="Facebook" rel="noopener">f</a>
+                <a href="https://linkedin.com" aria-label="LinkedIn" rel="noopener">in</a>
+              </nav>
+            </div>
+            <div class="sn-map-wrap">
+              <iframe
+                title="Carte intervention France — Signature Nomade"
+                loading="lazy"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27835758.693781495!2d2.2137491!3d46.603354!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd54acf33e9288cfa%3A0x1cdd69969cdeb9cd!2sFrance!5e0!3m2!1sfr!2sfr"
+              ></iframe>
+              <div class="sn-map-meta">
+                <p class="sn-muted mb-0" style="max-width: 24rem;font-size:.9rem;margin:0;">
+                  Mentionnez précisément villes&nbsp;/ codes postaux pour affiner vos deplacements montage&nbsp;/ démontage.
+                </p>
+                <a href="https://www.google.com/maps/search/?api=1&amp;query=France" class="sn-btn sn-btn-outline">Ouvrir Maps</a>
+              </div>
+            </div>
+            <div class="sn-cta-fin">
+              <div class="sn-cta-inner text-center sn-reveal">
+                <p class="sn-display" style="font-size:clamp(1.15rem,2vw,1.6rem);line-height:1.35;margin:0">
+                  Démonstrations gustatives possibles après cadrage complet du dossier événement.
+                </p>
+                <a class="sn-btn sn-btn-outline sn-btn-lg" style="margin-top:1rem" href="#tarifs">Relire les formules</a>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="sn-footer">
+      <div class="sn-footer-inner">
+        <div>
+          <p class="sn-display" style="font-size:1.6rem;margin:0;">Signature Nomade</p>
+          <p style="opacity:.72;margin:.75rem 0 1rem;line-height:1.6;">Rendre chaque lieu exceptionnel&nbsp;: gastronomie itinérante et service apaisé.</p>
+          <p class="sn-section-kicker mb-0" style="color: rgba(245,242,235,.55);margin-top:.4rem;font-size:.6rem;">
+            L'expérience gastronomique nomade
+          </p>
+          <nav class="sn-social-row" aria-label="Réseaux" style="margin-top: .25rem;">
+            <a href="https://instagram.com">◎</a>
+            <a href="https://facebook.com">f</a>
+            <a href="https://linkedin.com">in</a>
+          </nav>
+        </div>
+        <div style="display:grid;gap:1.5rem;font-size:.9rem;opacity:.74;grid-template-columns: repeat(auto-fill,minmax(12rem,1fr));">
+          <div>
+            <p class="sn-section-kicker" style="font-size:.6rem;">Liens</p>
+            <div style="display:flex;flex-direction:column;gap:.45rem;"><a href="#prestations">Prestations</a><a href="#tarifs">Tarifs</a><a href="#contact">Devis</a></div>
+          </div>
+          <div>
+            <p class="sn-section-kicker" style="font-size:.6rem;">Informations légales</p>
+            <div style="display:flex;flex-direction:column;gap:.45rem;">
+              <a href="#mentions-legales">Mentions légales</a><a href="#privacy">Confidentialité</a><a href="#cgv">CGV</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sn-footer-mini text-center" style="font-size:.7rem;color:rgba(245,242,235,.43);">&copy; 2026 Signature Nomade — Tous droits réservés.</div>
+    </footer>
+
+    <a href="https://wa.me/33612345678" class="sn-fab-whats" target="_blank" rel="noopener" aria-label="WhatsApp Signature Nomade"
+      ><span style="display:inline-flex;font-weight:750">⋯</span> <span>WhatsApp</span></a
+    >
+    <a href="#hero" class="sn-fab-top" id="sn-scroll-top" aria-label="Haut de page">↑</a>
+
+    <script src="./js/main.js" defer></script>
+  </body>
+</html>
