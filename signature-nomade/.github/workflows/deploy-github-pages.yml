@@ -1,5 +1,8 @@
 name: Déploiement GitHub Pages
 
+# Ce workflow publie le dossier dist sur GitHub Pages.
+# IMPORTANT (une seule fois) : Repo → Settings → Pages → Source = « GitHub Actions ».
+
 on:
   push:
     branches:
@@ -23,26 +26,44 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
+      # npm ci exige package-lock.json — sans lock, utiliser npm install (CI)
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
           node-version: "22"
           cache: npm
 
-      - run: npm ci
+      - name: Install dependencies
+        run: |
+          if [ -f package-lock.json ]; then
+            npm ci
+          else
+            npm install --no-audit --no-fund
+          fi
 
-      # Activer en production (base relative ./ dans vite.config pour GitHub Pages)
       - name: Build
         run: npm run build
         env:
           CI: true
+          NODE_ENV: production
 
-      - uses: actions/configure-pages@v5
+      - name: Vérifier la sortie
+        run: |
+          test -f dist/index.html
+          test -f dist/404.html
+          ls -la dist/
 
-      - uses: actions/upload-pages-artifact@v3
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
           path: dist
 
-      - id: deployment
+      - name: Deploy
+        id: deployment
         uses: actions/deploy-pages@v4
