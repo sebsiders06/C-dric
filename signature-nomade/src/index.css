@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-ink: #0a0a0b;
+  --color-ink-soft: #0f0f12;
+  --color-cream: #f5f2eb;
+  --color-champagne: #e8e0d5;
+  --color-champagne-muted: #d4c4b0;
+  --color-gold: #c9a962;
+  --color-gold-hover: #d4b872;
+  --shadow-glow-gold:
+    0 0 0 1px rgba(201, 169, 98, 0.2), 0 25px 60px -20px rgba(201, 169, 98, 0.35),
+    0 0 80px -30px rgba(201, 169, 98, 0.25);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  section[id],
+  footer[id],
+  header[id],
+  main[id] {
+    scroll-margin-top: clamp(5rem, 12vw, 6.5rem);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    margin: 0;
+    font-family:
+      "DM Sans",
+      system-ui,
+      -apple-system,
+      Segoe UI,
+      sans-serif;
+    background-color: var(--color-ink);
+    color: var(--color-cream);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: "Playfair Display", Georgia, ui-serif, serif;
+  }
+
+  .font-display {
+    font-family: "Playfair Display", Georgia, ui-serif, serif;
+  }
+
+  ::selection {
+    background: rgba(201, 169, 98, 0.35);
+    color: var(--color-cream);
+  }
+}
+
+@utility grain-overlay {
+  background-image:
+    radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 0),
+    radial-gradient(rgba(0, 0, 0, 0.35) 1px, transparent 0);
+  background-size:
+    3px 3px,
+    4px 4px;
+}

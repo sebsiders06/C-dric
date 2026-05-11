@@ -1,0 +1,23 @@
+# Dependencies
+node_modules
+
+# Builds
+dist
+dist-ssr
+*.local
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Editors
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Misc
+*.tsbuildinfo
+.DS_Store
