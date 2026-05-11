@@ -2,6 +2,9 @@ name: Déploiement GitHub Pages
 
 # Ce workflow publie le dossier dist sur GitHub Pages.
 # IMPORTANT (une seule fois) : Repo → Settings → Pages → Source = « GitHub Actions ».
+#
+# Le dépôt peut être soit « plat » (package.json à la racine), soit avec le site
+# dans le sous-dossier signature-nomade/ (structure Desktop/Cédric → GitHub C-dric).
 
 on:
   push:
@@ -29,14 +32,34 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # npm ci exige package-lock.json — sans lock, utiliser npm install (CI)
+      - name: Localiser le projet (racine ou signature-nomade/)
+        id: proj
+        run: |
+          if [ -f package.json ]; then
+            echo "dir=." >> "$GITHUB_OUTPUT"
+            echo "dist=dist" >> "$GITHUB_OUTPUT"
+            echo "lock=package-lock.json" >> "$GITHUB_OUTPUT"
+            echo "Projet npm à la racine du dépôt."
+          elif [ -f signature-nomade/package.json ]; then
+            echo "dir=signature-nomade" >> "$GITHUB_OUTPUT"
+            echo "dist=signature-nomade/dist" >> "$GITHUB_OUTPUT"
+            echo "lock=signature-nomade/package-lock.json" >> "$GITHUB_OUTPUT"
+            echo "Projet npm dans signature-nomade/."
+          else
+            echo "::error::Aucun package.json trouvé à la racine ni dans signature-nomade/"
+            find . -maxdepth 5 -name package.json -print 2>/dev/null || true
+            exit 1
+          fi
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: "22"
           cache: npm
+          cache-dependency-path: ${{ steps.proj.outputs.lock }}
 
       - name: Install dependencies
+        working-directory: ${{ steps.proj.outputs.dir }}
         run: |
           if [ -f package-lock.json ]; then
             npm ci
@@ -58,6 +81,7 @@ jobs:
           fi
 
       - name: Build
+        working-directory: ${{ steps.proj.outputs.dir }}
         run: npm run build
         env:
           CI: true
@@ -67,12 +91,12 @@ jobs:
 
       - name: Vérifier la sortie
         run: |
-          test -f dist/index.html
-          test -f dist/404.html
+          test -f "${{ steps.proj.outputs.dist }}/index.html"
+          test -f "${{ steps.proj.outputs.dist }}/404.html"
           echo "--- dist/index.html (aperçu) ---"
-          head -40 dist/index.html
+          head -40 "${{ steps.proj.outputs.dist }}/index.html"
           echo "--- assets ---"
-          ls -la dist/assets/ || true
+          ls -la "${{ steps.proj.outputs.dist }}/assets/" || true
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
@@ -80,7 +104,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: ${{ steps.proj.outputs.dist }}
 
       - name: Deploy
         id: deployment
